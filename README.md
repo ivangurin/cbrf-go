@@ -3,7 +3,7 @@
 
 ## Установка
 ```bash
-go get -u https://github.com/ivangurin/cbrf-go 
+go install github.com/ivangurin/cbrf-go 
 ```
 
 ## Пример использования
