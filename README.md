@@ -3,32 +3,32 @@
 
 ## Установка
 ```bash
-go install github.com/ivangurin/cbrf-go 
+go get -u github.com/ivangurin/cbrf-go 
 ```
 
 ## Пример использования
 ```go
-    now := time.Now()
+now := time.Now()
 
-	// Получение курса валюты на дату
-	exchangeRate, err := cbrf.GetExchangeRate(cbrf.CurrencyUSD, now)
+// Получение курса валюты на дату
+exchangeRate, err := cbrf.GetExchangeRate(cbrf.CurrencyUSD, now)
 
-	if err != nil {
-		log.Fatal(err)
-	}
+if err != nil {
+	log.Fatal(err)
+}
 
-	fmt.Printf("Текущий курс USD: %.2f рублей\n", exchangeRate)
+fmt.Printf("Текущий курс USD: %.2f рублей\n", exchangeRate)
 
-	// Конвертация 100 USD в EUR на дату
-	valueUSD := float64(100)
+// Конвертация 100 USD в EUR на дату
+valueUSD := float64(100)
 
-	valueEUR, err := cbrf.Convert(cbrf.CurrencyUSD, cbrf.CurrencyEUR, valueUSD, now)
+valueEUR, err := cbrf.Convert(cbrf.CurrencyUSD, cbrf.CurrencyEUR, valueUSD, now)
 
-	if err != nil {
-		log.Fatal(err)
-	}
+if err != nil {
+	log.Fatal(err)
+}
 
-	fmt.Printf("Стоимость %.2f USD равна %.2f EUR\n", valueUSD, valueEUR)
+fmt.Printf("Стоимость %.2f USD равна %.2f EUR\n", valueUSD, valueEUR)
 ```
 
 ## Лицензия
