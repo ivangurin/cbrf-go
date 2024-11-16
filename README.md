@@ -1,20 +1,23 @@
 # Получение и конвертация курсов валют ЦБ РФ на дату
+
 Библиотека предназаначена для получения курсов валют ЦБ РФ и конвртации стоимости валют на заданную дату.
 
 ## Установка
-```bash
-go get -u github.com/ivangurin/cbrf-go 
+
+```zsh
+go get github.com/ivangurin/cbrf-go 
 ```
 
 ## Пример использования
+
 ```go
+ctx := context.Background()
 now := time.Now()
 
 // Получение курса валюты на дату
-exchangeRate, err := cbrf.GetExchangeRate(cbrf.CurrencyUSD, now)
-
+exchangeRate, err := cbrf.GetExchangeRate(ctx, cbrf.CurrencyUSD, now)
 if err != nil {
-	log.Fatal(err)
+    log.Fatal(err)
 }
 
 fmt.Printf("Текущий курс USD: %.2f рублей\n", exchangeRate)
@@ -22,10 +25,9 @@ fmt.Printf("Текущий курс USD: %.2f рублей\n", exchangeRate)
 // Конвертация 100 USD в EUR на дату
 valueUSD := float64(100)
 
-valueEUR, err := cbrf.Convert(cbrf.CurrencyUSD, cbrf.CurrencyEUR, valueUSD, now)
-
+valueEUR, err := cbrf.Convert(ctx, cbrf.CurrencyUSD, cbrf.CurrencyEUR, valueUSD, now)
 if err != nil {
-	log.Fatal(err)
+    log.Fatal(err)
 }
 
 fmt.Printf("Стоимость %.2f USD равна %.2f EUR\n", valueUSD, valueEUR)

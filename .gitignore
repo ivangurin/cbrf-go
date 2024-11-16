@@ -1,0 +1,10 @@
+/.idea
+/.vscode
+/bin
+/vendor
+/vendor.pb
+/vendor.protogen
+.DS_STORE
+.DS_Store
+coverage.html
+coverage.out
