@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ivangurin/cbrf-go/internal/model"
 	cbrf_client "github.com/ivangurin/cbrf-go/internal/pkg/client/cbrf"
+	"github.com/ivangurin/cbrf-go/pkg/model"
 )
 
 type IService interface {

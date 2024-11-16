@@ -15,7 +15,8 @@ ctx := context.Background()
 now := time.Now()
 
 // Получение курса валюты на дату
-exchangeRate, err := cbrf.GetExchangeRate(ctx, cbrf.CurrencyUSD, now)
+exchangeRate, err := cbrf.GetExchangeRate(ctx, model.CurrencyUSD, now)
+
 if err != nil {
     log.Fatal(err)
 }
@@ -24,8 +25,8 @@ fmt.Printf("Текущий курс USD: %.2f рублей\n", exchangeRate)
 
 // Конвертация 100 USD в EUR на дату
 valueUSD := float64(100)
+valueEUR, err := cbrf.Convert(ctx, model.CurrencyUSD, model.CurrencyEUR, valueUSD, now)
 
-valueEUR, err := cbrf.Convert(ctx, cbrf.CurrencyUSD, cbrf.CurrencyEUR, valueUSD, now)
 if err != nil {
     log.Fatal(err)
 }

@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ivangurin/cbrf-go/internal/model"
+	"github.com/ivangurin/cbrf-go/pkg/model"
 	"github.com/stretchr/testify/require"
 )
 
